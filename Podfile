@@ -11,7 +11,11 @@ abstract_target 'Common' do
   pod 'SDWebImage'
   pod 'AFNetworking', '~> 3.1.0'
   pod 'Masonry'
-  pod 'WCDB'
+#  pod 'WCDB'
+  pod 'JGProgressHUD'
+  pod 'Toast', '~> 4.0.0'
+  pod 'YYModel'
+  pod 'SimpleKeychain'
   target 'ReadRss' do
   end
   

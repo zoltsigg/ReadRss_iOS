@@ -8,6 +8,8 @@
 
 #import "AddLinkViewController.h"
 #import <Masonry/Masonry.h>
+#import "NetworkClient.h"
+#import "RssInfoModel.h"
 
 @interface AddLinkViewController ()
 
@@ -155,6 +157,28 @@
 
 - (void) onOkClick {
     NSLog(@"onOkClick");
+    NSString *link = self.input.text;
+    
+    if(link.length == 0) {
+        [self.view makeToast:@"链接不能为空"];
+    } else {
+//        JGProgressHUD *HUD = [JGProgressHUD progressHUDWithStyle:JGProgressHUDStyleDark];
+//        HUD.textLabel.text = @"Loading";
+//        [HUD showInView:self.view];
+        [self.view makeToastActivity:CSToastPositionCenter];
+        [[NetworkClient sharedInstance] addRss:self.input.text callback:^(BOOL isSuccess, RssInfoModel *data) {
+            [self.view hideToastActivity];
+            if(isSuccess) {
+                //如果返回成功
+                [self.view makeToast:@"添加成功"];
+                [self onCancelClick];
+            } else {
+                [self.view makeToast:@"添加失败,请稍后再试"];
+            }
+        }];
+    }
+    
+   
 }
 
 - (void) onCancelClick {

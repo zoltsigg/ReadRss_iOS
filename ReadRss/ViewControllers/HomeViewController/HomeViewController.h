@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "FakerNavbarViewController.h"
+#import "RssInfoModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeViewController : FakerNavbarViewController
+@interface HomeViewController : FakerNavbarViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property(strong, nonatomic) UITableView *tableView;
-
+@property(strong, nonatomic) NSArray<RssInfoModel *> *rssList;
 
 @end
 

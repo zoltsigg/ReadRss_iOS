@@ -10,13 +10,16 @@
 #import <AFNetworking/AFNetworking.h>
 
 NS_ASSUME_NONNULL_BEGIN
+typedef void (^NetworkCallback)(BOOL isSuccess, id _Nullable data);
 
 @interface NetworkClient : NSObject
 
 @property(strong, nonatomic) AFHTTPSessionManager *manager;
+@property(strong, nonatomic) NSString *token;
 
 + (instancetype) sharedInstance;
-- (void) login;
+- (void) login:(NetworkCallback)callback;
+- (void) addRss: (NSString *) url callback: (NetworkCallback) callback;
 @end
 
 NS_ASSUME_NONNULL_END

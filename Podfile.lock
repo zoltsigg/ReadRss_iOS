@@ -14,27 +14,43 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - JGProgressHUD (2.0.3)
   - Masonry (1.1.0)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
+  - SimpleKeychain (0.8.1)
+  - Toast (4.0.0)
+  - YYModel (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
+  - JGProgressHUD
   - Masonry
   - SDWebImage
+  - SimpleKeychain
+  - Toast (~> 4.0.0)
+  - YYModel
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - JGProgressHUD
     - Masonry
     - SDWebImage
+    - SimpleKeychain
+    - Toast
+    - YYModel
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SimpleKeychain: e2485c28d82fcece35e9e41faeac42ebfe614815
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: d7737d18a10f88e652564c3f4cb860ac1fa9a688
+PODFILE CHECKSUM: 1ba3480950f639fa4ad6d69b05b64d11a64921ec
 
 COCOAPODS: 1.5.3
