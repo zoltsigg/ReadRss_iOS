@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		143B8803219D67A200A2B79C /* SideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 143B8802219D67A200A2B79C /* SideViewController.m */; };
+		143B8807219D8DDE00A2B79C /* SideTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 143B8806219D8DDE00A2B79C /* SideTableViewCell.m */; };
 		14528B50218304110005BF0C /* FakerNavbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14528B4F218304110005BF0C /* FakerNavbarViewController.m */; };
 		14662294218C3F0C000C26D2 /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14662293218C3F0C000C26D2 /* ArticleViewController.m */; };
 		1470209E218B2D3B0094DA56 /* LoginInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470209D218B2D3B0094DA56 /* LoginInfoModel.m */; };
+		14B2BB2621991B3300EEDFA7 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B2BB2521991B3300EEDFA7 /* DataManager.m */; };
+		14B2BB292199588F00EEDFA7 /* ResponseArticleListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B2BB282199588F00EEDFA7 /* ResponseArticleListModel.m */; };
+		14B2BB2D21995CA800EEDFA7 /* ArticleTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B2BB2C21995CA800EEDFA7 /* ArticleTableCell.m */; };
 		14B2FD0F217980BD0065E8A4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B2FD0E217980BD0065E8A4 /* AppDelegate.m */; };
 		14B2FD15217980BD0065E8A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B2FD13217980BD0065E8A4 /* Main.storyboard */; };
 		14B2FD17217980C00065E8A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14B2FD16217980C00065E8A4 /* Assets.xcassets */; };
@@ -25,6 +30,7 @@
 		14BF8966218B0A3000DC64B4 /* ResponseAddRssModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BF8965218B0A3000DC64B4 /* ResponseAddRssModel.m */; };
 		14BF8969218B245100DC64B4 /* ResponseLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BF8968218B245100DC64B4 /* ResponseLoginModel.m */; };
 		14C7B746218BFC2B0066EA1A /* RssInfoTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C7B745218BFC2B0066EA1A /* RssInfoTableCell.m */; };
+		14DB0A002191CF4C00E2AAB0 /* ArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DB09FF2191CF4C00E2AAB0 /* ArticleModel.m */; };
 		14EC539A2186F6CB0061869E /* AddLinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC53992186F6CB0061869E /* AddLinkViewController.m */; };
 		14EC539F21872F7E0061869E /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC539E21872F7E0061869E /* UIImage+Color.m */; };
 		ED638CA690423BDA410061AC /* libPods-Common-ReadRss.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D87F8D4EB619277089A6E43 /* libPods-Common-ReadRss.a */; };
@@ -49,12 +55,22 @@
 
 /* Begin PBXFileReference section */
 		0D87F8D4EB619277089A6E43 /* libPods-Common-ReadRss.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Common-ReadRss.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		143B8801219D67A200A2B79C /* SideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SideViewController.h; sourceTree = "<group>"; };
+		143B8802219D67A200A2B79C /* SideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideViewController.m; sourceTree = "<group>"; };
+		143B8805219D8DDE00A2B79C /* SideTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SideTableViewCell.h; sourceTree = "<group>"; };
+		143B8806219D8DDE00A2B79C /* SideTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideTableViewCell.m; sourceTree = "<group>"; };
 		14528B4E218304110005BF0C /* FakerNavbarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FakerNavbarViewController.h; sourceTree = "<group>"; };
 		14528B4F218304110005BF0C /* FakerNavbarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FakerNavbarViewController.m; sourceTree = "<group>"; };
 		14662292218C3F0C000C26D2 /* ArticleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleViewController.h; sourceTree = "<group>"; };
 		14662293218C3F0C000C26D2 /* ArticleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
 		1470209C218B2D3B0094DA56 /* LoginInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginInfoModel.h; sourceTree = "<group>"; };
 		1470209D218B2D3B0094DA56 /* LoginInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginInfoModel.m; sourceTree = "<group>"; };
+		14B2BB2421991B3300EEDFA7 /* DataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		14B2BB2521991B3300EEDFA7 /* DataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		14B2BB272199588E00EEDFA7 /* ResponseArticleListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponseArticleListModel.h; sourceTree = "<group>"; };
+		14B2BB282199588F00EEDFA7 /* ResponseArticleListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResponseArticleListModel.m; sourceTree = "<group>"; };
+		14B2BB2B21995CA800EEDFA7 /* ArticleTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleTableCell.h; sourceTree = "<group>"; };
+		14B2BB2C21995CA800EEDFA7 /* ArticleTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticleTableCell.m; sourceTree = "<group>"; };
 		14B2FD0A217980BD0065E8A4 /* ReadRss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadRss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14B2FD0D217980BD0065E8A4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		14B2FD0E217980BD0065E8A4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -87,6 +103,8 @@
 		14BF8968218B245100DC64B4 /* ResponseLoginModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResponseLoginModel.m; sourceTree = "<group>"; };
 		14C7B744218BFC2B0066EA1A /* RssInfoTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RssInfoTableCell.h; sourceTree = "<group>"; };
 		14C7B745218BFC2B0066EA1A /* RssInfoTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RssInfoTableCell.m; sourceTree = "<group>"; };
+		14DB09FE2191CF4C00E2AAB0 /* ArticleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleModel.h; sourceTree = "<group>"; };
+		14DB09FF2191CF4C00E2AAB0 /* ArticleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticleModel.m; sourceTree = "<group>"; };
 		14EC53982186F6CB0061869E /* AddLinkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddLinkViewController.h; sourceTree = "<group>"; };
 		14EC53992186F6CB0061869E /* AddLinkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddLinkViewController.m; sourceTree = "<group>"; };
 		14EC539D21872F7E0061869E /* UIImage+Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
@@ -129,6 +147,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		143B8800219D677400A2B79C /* SideViewController */ = {
+			isa = PBXGroup;
+			children = (
+				143B8801219D67A200A2B79C /* SideViewController.h */,
+				143B8802219D67A200A2B79C /* SideViewController.m */,
+			);
+			path = SideViewController;
+			sourceTree = "<group>";
+		};
+		143B8804219D8DAB00A2B79C /* SideCell */ = {
+			isa = PBXGroup;
+			children = (
+				143B8805219D8DDE00A2B79C /* SideTableViewCell.h */,
+				143B8806219D8DDE00A2B79C /* SideTableViewCell.m */,
+			);
+			path = SideCell;
+			sourceTree = "<group>";
+		};
 		14662291218C3EAF000C26D2 /* ArticleViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +172,24 @@
 				14662293218C3F0C000C26D2 /* ArticleViewController.m */,
 			);
 			path = ArticleViewController;
+			sourceTree = "<group>";
+		};
+		14B2BB2321991B2000EEDFA7 /* Datas */ = {
+			isa = PBXGroup;
+			children = (
+				14B2BB2421991B3300EEDFA7 /* DataManager.h */,
+				14B2BB2521991B3300EEDFA7 /* DataManager.m */,
+			);
+			path = Datas;
+			sourceTree = "<group>";
+		};
+		14B2BB2A21995C7B00EEDFA7 /* ArticleCell */ = {
+			isa = PBXGroup;
+			children = (
+				14B2BB2B21995CA800EEDFA7 /* ArticleTableCell.h */,
+				14B2BB2C21995CA800EEDFA7 /* ArticleTableCell.m */,
+			);
+			path = ArticleCell;
 			sourceTree = "<group>";
 		};
 		14B2FD01217980BD0065E8A4 = {
@@ -228,6 +282,7 @@
 		14B2FD442179B3C60065E8A4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				143B8800219D677400A2B79C /* SideViewController */,
 				14662291218C3EAF000C26D2 /* ArticleViewController */,
 				14B2FD452179B3E80065E8A4 /* HomeViewController */,
 			);
@@ -246,6 +301,7 @@
 		14B2FD492179BF940065E8A4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				14B2BB2321991B2000EEDFA7 /* Datas */,
 				14BF8958218AD80100DC64B4 /* ToolUtils */,
 				14B2FD4D2179D08B0065E8A4 /* NetworkClient */,
 			);
@@ -280,6 +336,8 @@
 				14BF8961218B095F00DC64B4 /* RssInfoModel.m */,
 				1470209C218B2D3B0094DA56 /* LoginInfoModel.h */,
 				1470209D218B2D3B0094DA56 /* LoginInfoModel.m */,
+				14DB09FE2191CF4C00E2AAB0 /* ArticleModel.h */,
+				14DB09FF2191CF4C00E2AAB0 /* ArticleModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -291,6 +349,8 @@
 				14BF8965218B0A3000DC64B4 /* ResponseAddRssModel.m */,
 				14BF8967218B245100DC64B4 /* ResponseLoginModel.h */,
 				14BF8968218B245100DC64B4 /* ResponseLoginModel.m */,
+				14B2BB272199588E00EEDFA7 /* ResponseArticleListModel.h */,
+				14B2BB282199588F00EEDFA7 /* ResponseArticleListModel.m */,
 			);
 			path = ResponseModels;
 			sourceTree = "<group>";
@@ -307,6 +367,8 @@
 		14EC53972186F6AA0061869E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				143B8804219D8DAB00A2B79C /* SideCell */,
+				14B2BB2A21995C7B00EEDFA7 /* ArticleCell */,
 				14C7B743218BFBFB0066EA1A /* RssInfoCell */,
 				14EC539B2186F6D10061869E /* AddLink */,
 			);
@@ -520,19 +582,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				14B2FD502179D0B30065E8A4 /* NetworkClient.m in Sources */,
+				14B2BB292199588F00EEDFA7 /* ResponseArticleListModel.m in Sources */,
 				14C7B746218BFC2B0066EA1A /* RssInfoTableCell.m in Sources */,
 				14528B50218304110005BF0C /* FakerNavbarViewController.m in Sources */,
 				14EC539F21872F7E0061869E /* UIImage+Color.m in Sources */,
+				14B2BB2621991B3300EEDFA7 /* DataManager.m in Sources */,
 				1470209E218B2D3B0094DA56 /* LoginInfoModel.m in Sources */,
 				14662294218C3F0C000C26D2 /* ArticleViewController.m in Sources */,
 				14B2FD1D217980C00065E8A4 /* main.m in Sources */,
 				14BF8969218B245100DC64B4 /* ResponseLoginModel.m in Sources */,
 				14BF8962218B095F00DC64B4 /* RssInfoModel.m in Sources */,
 				14B2FD0F217980BD0065E8A4 /* AppDelegate.m in Sources */,
+				143B8807219D8DDE00A2B79C /* SideTableViewCell.m in Sources */,
 				14BF8966218B0A3000DC64B4 /* ResponseAddRssModel.m in Sources */,
 				14BF895E218ADF9700DC64B4 /* NetworkModel.m in Sources */,
 				14BF895B218AD82500DC64B4 /* ToolUtils.m in Sources */,
+				143B8803219D67A200A2B79C /* SideViewController.m in Sources */,
 				14EC539A2186F6CB0061869E /* AddLinkViewController.m in Sources */,
+				14DB0A002191CF4C00E2AAB0 /* ArticleModel.m in Sources */,
+				14B2BB2D21995CA800EEDFA7 /* ArticleTableCell.m in Sources */,
 				14B2FD482179B4080065E8A4 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

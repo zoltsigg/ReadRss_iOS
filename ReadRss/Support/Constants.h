@@ -9,6 +9,9 @@
 #ifndef Constants_h
 #define Constants_h
 
+#define AppName @"ReadRss"
+
+
 #ifndef RGBACOLOR
 #  define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
 #endif
@@ -37,4 +40,11 @@
 #define kRelativeWidthByIphone6 (ScreenWidth/375.0f)
 
 #define kScale ((ScreenWidth/ScreenHeight > 375.0/667.0)?([UIScreen mainScreen].bounds.size.height/667.0): ([UIScreen mainScreen].bounds.size.width/375.0))
+
+
+
+
+
+#define kNotificationAddRss  @"NotificationAddRss"
+
 #endif /* Constants_h */

@@ -7,6 +7,7 @@
 //
 
 #import "FakerNavbarViewController.h"
+#import "SideViewController.h"
 
 @interface FakerNavbarViewController ()
 
@@ -17,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.navigationBar.hidden = YES;
     [self initBaseView];
 }
 
@@ -78,7 +80,7 @@
     if(!_rightBtn) {
         _rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
         _rightBtn.center = CGPointMake(ScreenWidth - 30, kIphoneNavigationBarHeight/2 + kIphoneStatusBarHeight);
-        [_rightBtn setImage:[UIImage imageNamed:@"ic_setting"] forState:UIControlStateNormal];
+        [_rightBtn setImage:[UIImage imageNamed:@"ic_navbar_setting"] forState:UIControlStateNormal];
         [_rightBtn addTarget:self action:@selector(onRightClick) forControlEvents:UIControlEventTouchDown];
     }
     return _rightBtn;
@@ -109,5 +111,11 @@
 }
 
 - (void) onRightClick {
+}
+
+- (void) openLeftSide {
+    SideViewController *vc = [[SideViewController alloc] init];
+    vc.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    [self presentViewController:vc animated:NO completion:nil];
 }
 @end

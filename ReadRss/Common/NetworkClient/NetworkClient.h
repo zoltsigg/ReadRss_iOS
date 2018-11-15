@@ -20,6 +20,7 @@ typedef void (^NetworkCallback)(BOOL isSuccess, id _Nullable data);
 + (instancetype) sharedInstance;
 - (void) login:(NetworkCallback)callback;
 - (void) addRss: (NSString *) url callback: (NetworkCallback) callback;
+- (void) getArticleList: (NSInteger) rid callback: (NetworkCallback) callback;
 @end
 
 NS_ASSUME_NONNULL_END

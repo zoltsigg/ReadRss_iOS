@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RssInfoModel : NSObject
 
+@property(copy, nonatomic) NSNumber *rid;
 @property(copy, nonatomic) NSString *desc;
 @property(copy, nonatomic) NSString *link;
 @property(copy, nonatomic) NSString *title;

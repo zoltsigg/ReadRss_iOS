@@ -11,6 +11,7 @@
 #import "ResponseModels/ResponseAddRssModel.h"
 #import "ResponseModels/ResponseLoginModel.h"
 #import "SimpleKeychain.h"
+#import "ResponseModels/ResponseArticleListModel.h"
 
 @implementation NetworkClient
 
@@ -86,6 +87,24 @@
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error:%@", error);
+        callback(NO, nil);
+    }];
+}
+
+- (void) getArticleList: (NSInteger) rid callback: (NetworkCallback) callback {
+    NSDictionary *param = @{
+                            @"s" : @"home.GetArticleList",
+                            @"param": [ToolUtils dict2json:@{@"rid": [NSNumber numberWithInteger:rid]}]
+                            };
+    [self.manager POST:URL parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
+        ResponseArticleListModel *model = [ResponseArticleListModel yy_modelWithJSON:responseObject];
+        if(model.code == 200) {
+            callback(YES, model.data);
+        } else {
+            callback(NO, nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         callback(NO, nil);
     }];
 }

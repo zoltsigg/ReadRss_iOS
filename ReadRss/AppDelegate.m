@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 
+
 @interface AppDelegate ()
 
 @end
@@ -19,11 +20,12 @@
     // Override point for customization after application launch.
     NSLog(@"width=%f  height=%f", ScreenWidth, ScreenHeight);
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
+
     self.window.backgroundColor = [UIColor whiteColor];
     self.rootVC = [[HomeViewController alloc] init];
     self.window.rootViewController = self.rootVC;
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

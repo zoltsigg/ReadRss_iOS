@@ -10,8 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void (^ onLeftClick)(void);
-
 @interface FakerNavbarViewController : UIViewController
 
 
@@ -24,7 +22,7 @@ typedef void (^ onLeftClick)(void);
 
 - (void) setLeftBtnIcon: (UIImage *) icon;
 - (void) setRightBtnIcon: (UIImage *) icon;
-
+- (void) openLeftSide;
 @end
 
 NS_ASSUME_NONNULL_END

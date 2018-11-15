@@ -10,6 +10,7 @@
 #import <Masonry/Masonry.h>
 #import "NetworkClient.h"
 #import "RssInfoModel.h"
+#import "DataManager.h"
 
 @interface AddLinkViewController ()
 
@@ -171,6 +172,12 @@
             if(isSuccess) {
                 //如果返回成功
                 [self.view makeToast:@"添加成功"];
+                
+                NSMutableArray *arr = [DataManager sharedInstance].rssList.mutableCopy;
+                [arr addObject:data];
+                [[DataManager sharedInstance] setRssList:arr.copy];
+                [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationAddRss object:nil];
+                
                 [self onCancelClick];
             } else {
                 [self.view makeToast:@"添加失败,请稍后再试"];

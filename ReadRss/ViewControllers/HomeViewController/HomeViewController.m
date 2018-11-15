@@ -13,6 +13,8 @@
 #import "LoginInfoModel.h"
 #import "SimpleKeychain.h"
 #import "RssInfoTableCell.h"
+#import "ArticleViewController.h"
+#import "DataManager.h"
 
 @interface HomeViewController ()
 
@@ -27,20 +29,35 @@
     self.rssList = [[NSArray alloc] init];
     [self createUI];
     [self requestData];
+    [self addNotification];
+}
+
+- (void) dealloc {
+    [self removeNotification];
+}
+
+- (void) addNotification {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshUI) name:kNotificationAddRss object:nil];
+}
+
+- (void) removeNotification {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void) setTitleBar {
-    [self setRightBtnIcon:[UIImage imageNamed:@"ic_setting"]];
-    [self setLeftBtnIcon:[UIImage imageNamed:@"ic_add"]];
+    [self setRightBtnIcon:[UIImage imageNamed:@"ic_navbar_setting"]];
+    [self setLeftBtnIcon:[UIImage imageNamed:@"hamburger"]];
     [self setTitle:@"首页"];
     
 }
 
 - (void) onLeftClick {
     NSLog(@"onLeftClick");
-    AddLinkViewController *vc = [[AddLinkViewController alloc] init];
-    vc.modalPresentationStyle = UIModalPresentationOverFullScreen;
-    [self presentViewController:vc animated:YES completion:nil];
+//    AddLinkViewController *vc = [[AddLinkViewController alloc] init];
+//    vc.modalPresentationStyle = UIModalPresentationOverFullScreen;
+//    [self presentViewController:vc animated:YES completion:nil];
+    
+    [self openLeftSide];
 }
 
 - (void) onRightClick {
@@ -55,6 +72,7 @@
         if(success) {
             [[A0SimpleKeychain keychain] setString:model.token forKey:@"token"];
             self.rssList = model.list;
+            [[DataManager sharedInstance] setRssList:model.list];
             [self.tableView reloadData];
         } else {
             
@@ -97,11 +115,23 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"index:%ld", [indexPath row]);
+
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    ArticleViewController *vc = [[ArticleViewController alloc] init];
+    vc.rid = [[self.rssList objectAtIndex:[indexPath row]].rid integerValue];
+    [self presentViewController:vc animated:YES completion:nil];
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.rssList.count;
+}
+
+
+- (void) refreshUI {
+    self.rssList  = [DataManager sharedInstance].rssList;
+    [self.tableView reloadData];
 }
 
 @end
