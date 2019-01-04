@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "DataManager.h"
 
 @interface AppDelegate ()
 
@@ -19,13 +19,24 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     NSLog(@"width=%f  height=%f", ScreenWidth, ScreenHeight);
+    
+    NSArray *familyNames = [UIFont familyNames];
+    for( NSString *familyName in familyNames ){
+        printf( "Family: %s \n", [familyName UTF8String] );
+        NSArray *fontNames = [UIFont fontNamesForFamilyName:familyName];
+        for( NSString *fontName in fontNames ){
+            printf( "\tFont: %s \n", [fontName UTF8String] );
+        }
+    }
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-
     self.window.backgroundColor = [UIColor whiteColor];
-    self.rootVC = [[HomeViewController alloc] init];
+    self.rootVC = [[PSViewController alloc] init];
     self.window.rootViewController = self.rootVC;
     [self.window makeKeyAndVisible];
     
+    [[DataManager sharedInstance] initDB];
     return YES;
 }
 
@@ -55,6 +66,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 
 @end

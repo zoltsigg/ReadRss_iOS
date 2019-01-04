@@ -19,7 +19,6 @@
 #define ClearColor             [UIColor clearColor]
 
 
-
 #define ScreenWidth [[UIScreen mainScreen] bounds].size.width
 #define ScreenHeight [[UIScreen mainScreen] bounds].size.height
 
@@ -42,9 +41,20 @@
 #define kScale ((ScreenWidth/ScreenHeight > 375.0/667.0)?([UIScreen mainScreen].bounds.size.height/667.0): ([UIScreen mainScreen].bounds.size.width/375.0))
 
 
+#define GLOBAL_FONT_SIZE(f)  [UIFont fontWithName:@"SourceHanSansCN-Regular" size:(f)] ? :[UIFont systemFontOfSize:(f)]
+#define GLOBAL_BOLD_FONT_SIZE(f)  [UIFont fontWithName:@"SourceHanSansCN-Bold" size:(f)] ?: [UIFont boldSystemFontOfSize:(f)]
+#define GLOBAL_LIGHT_FONT_SIZE(f) [UIFont fontWithName:@"SourceHanSansCN-Light" size:(f)]?: [UIFont systemFontOfSize:(f)]
 
+#define WEAK_SELF   typeof(self) __weak weakSelf = self;
+#define STRONG_SELF typeof(weakSelf) __strong strongSelf  = weakSelf;
 
 
 #define kNotificationAddRss  @"NotificationAddRss"
+#define kNotificationChangeTab @"NotificationChangeTab"
 
+
+#define ROUTER_HOME @"RD://home"
+#define ROUTER_LIKE @"RD://like"
+#define ROUTER_ARTICLE_LIST  @"RD://articleList"
+#define ROUTER_ARTICLE_DETAIL @"RD://articleDetail"
 #endif /* Constants_h */

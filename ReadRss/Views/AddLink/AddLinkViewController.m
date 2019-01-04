@@ -11,12 +11,20 @@
 #import "NetworkClient.h"
 #import "RssInfoModel.h"
 #import "DataManager.h"
+#import <pop/POP.h>
 
 @interface AddLinkViewController ()
 
 @end
 
 @implementation AddLinkViewController
+
+- (instancetype)init {
+    if(self = [super init]) {
+        self.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -79,7 +87,25 @@
         make.left.mas_equalTo(self.input.mas_left);
         make.top.mas_equalTo(self.input.mas_bottom).offset(30*kScale);
     }];
+    
+//    self.contentView.transform = CGAffineTransformMakeScale(0, 0);
+//    [UIView animateWithDuration:2 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:0 options:UIViewAnimationOptionCurveLinear animations:^{
+//        self.contentView.transform = CGAffineTransformIdentity;
+//    } completion:^(BOOL finished) {
+//
+//    }];
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear: animated];
+    self.contentView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+    [UIView animateWithDuration:0.8 delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.contentView.transform = CGAffineTransformIdentity;
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
 
 
 - (UIView *)maskView {
@@ -128,7 +154,7 @@
     if(!_okBtn) {
         _okBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _okBtn.frame = CGRectMake(0, 0, 90, 35);
-        [_okBtn setBackgroundImage:[UIImage imageWithColor:RGBACOLOR(45, 115, 246, 1.0)] forState:UIControlStateNormal];
+        [_okBtn setBackgroundImage:[UIImage imageWithColor:RGBACOLOR(45, 83, 220, 1.0)] forState:UIControlStateNormal];
         _okBtn.layer.cornerRadius = 5*kScale;//2.0是圆角的弧度，根据需求自己更改
         _okBtn.layer.masksToBounds = YES;
         [_okBtn setTitle:@"确定" forState:UIControlStateNormal];
@@ -189,6 +215,16 @@
 }
 
 - (void) onCancelClick {
-    [self dismissViewControllerAnimated:NO completion:nil];
+    [self onClose];
 }
+
+
+- (void) onClose {
+    [UIView animateWithDuration:0.4 delay:0 usingSpringWithDamping:1 initialSpringVelocity:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        self.contentView.transform = CGAffineTransformMakeScale(0.4, 0.4);
+    } completion:^(BOOL finished) {
+        [self dismissViewControllerAnimated:NO completion:nil];
+    }];
+}
+
 @end

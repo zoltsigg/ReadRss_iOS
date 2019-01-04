@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(strong, nonatomic) UILabel *titleLabel;
 @property(strong, nonatomic) UILabel *descLabel;
+@property(strong, nonatomic) UIView *badgeView;
+@property(strong, nonatomic) UILabel *badgeLabel;
 
 - (void) refreshUI: (RssInfoModel *) model;
 

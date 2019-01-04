@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "RssInfoModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SideTableViewCell : UITableViewCell
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(strong, nonatomic) UIImageView *icon;
 @property(strong, nonatomic) UILabel *navLabel;
 
-- (void) refreshUI: (NSDictionary *)dict;
+- (void) refreshUI: (RssInfoModel *) model;
 @end
 
 NS_ASSUME_NONNULL_END

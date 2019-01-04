@@ -44,7 +44,7 @@
         make.top.equalTo(self.titleLabel.mas_bottom).offset(8*kScale);
         make.left.equalTo(self.contentView.mas_left).offset(16*kScale);
         make.right.equalTo(self.contentView.mas_right).offset(-16*kScale);
-        make.bottom.equalTo(self.contentView.mas_bottom).offset(-16*kScale);
+        make.bottom.equalTo(self.contentView.mas_bottom).offset(-8*kScale);
     }];
 }
 
@@ -52,9 +52,9 @@
 - (UILabel *)titleLabel {
     if(!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.textColor = RGBACOLOR(51, 51, 51, 1.0);
+        _titleLabel.textColor = RGBACOLOR(80, 80, 80, 1.0);
         _titleLabel.numberOfLines = 0;
-        _titleLabel.font = [UIFont boldSystemFontOfSize:18*kScale];
+        _titleLabel.font = [UIFont systemFontOfSize:15*kScale];
     }
     return _titleLabel;
 }
@@ -71,5 +71,9 @@
 
 - (void) refreshUI: (ArticleModel *) model {
     self.titleLabel.text = model.title;
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:model.publish_timestamp.integerValue];
+    NSDateFormatter *dateformatter=[[NSDateFormatter alloc] init];
+    [dateformatter setDateFormat:@"YYYY-MM-dd"];
+    self.timeLabel.text = [dateformatter stringFromDate:date];
 }
 @end

@@ -15,6 +15,7 @@
 #import "RssInfoTableCell.h"
 #import "ArticleViewController.h"
 #import "DataManager.h"
+#import "DialogManager.h"
 
 @interface HomeViewController ()
 
@@ -45,27 +46,20 @@
 }
 
 - (void) setTitleBar {
-    [self setRightBtnIcon:[UIImage imageNamed:@"ic_navbar_setting"]];
+    [self setRightBtnIcon:[UIImage imageNamed:@"ic_add"]];
     [self setLeftBtnIcon:[UIImage imageNamed:@"hamburger"]];
     [self setTitle:@"首页"];
     
 }
 
-- (void) onLeftClick {
-    NSLog(@"onLeftClick");
-//    AddLinkViewController *vc = [[AddLinkViewController alloc] init];
-//    vc.modalPresentationStyle = UIModalPresentationOverFullScreen;
-//    [self presentViewController:vc animated:YES completion:nil];
-    
-    [self openLeftSide];
-}
 
 - (void) onRightClick {
     NSLog(@"onRightClick");
+    AddLinkViewController *vc = [[AddLinkViewController alloc] init];
+    [self presentViewController:vc animated:NO completion:nil];
 }
 
 - (void) requestData {
-    
     [self.view makeToastActivity:CSToastPositionCenter];
     [[NetworkClient sharedInstance] login:^(BOOL success, LoginInfoModel *model) {
         [self.view hideToastActivity];
@@ -85,6 +79,7 @@
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.equalTo(self.contentView);
     }];
+
 }
 
 
@@ -119,7 +114,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
     ArticleViewController *vc = [[ArticleViewController alloc] init];
-    vc.rid = [[self.rssList objectAtIndex:[indexPath row]].rid integerValue];
+//    vc.rid = [[self.rssList objectAtIndex:[indexPath row]].rid integerValue];
     [self presentViewController:vc animated:YES completion:nil];
     
 }

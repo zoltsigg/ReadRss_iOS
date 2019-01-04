@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(strong, nonatomic) NSString *summary;
 @property(strong, nonatomic) NSString *content;
 @property(strong, nonatomic) NSString *link;
-@property(strong, nonatomic) NSNumber *publishDate;
+@property(strong, nonatomic) NSNumber *publish_timestamp;
 
 @end
 

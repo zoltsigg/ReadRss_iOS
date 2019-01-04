@@ -9,13 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "FakerNavbarViewController.h"
 #import "ArticleModel.h"
+#import "RssInfoModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ArticleViewController :FakerNavbarViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property(strong, nonatomic) UITableView *articleTableView;
 @property(strong, nonatomic) NSArray<ArticleModel *> *articleList;
-@property(assign, nonatomic) NSInteger rid;
+@property(assign, nonatomic) RssInfoModel *model;
+
+-(void) showData:(RssInfoModel *) model;
 @end
 
 NS_ASSUME_NONNULL_END

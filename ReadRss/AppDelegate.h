@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "HomeViewController.h"
 #import "SideViewController.h"
+#import "PSViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) HomeViewController *rootVC;
+@property (strong, nonatomic) PSViewController *rootVC;
 @end
 

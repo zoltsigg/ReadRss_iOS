@@ -11,6 +11,8 @@
 #import "NetworkClient.h"
 #import "ArticleModel.h"
 #import "ArticleTableCell.h"
+#import "DetailViewController.h"
+#import "RDRouter.h"
 
 @interface ArticleViewController ()
 
@@ -23,7 +25,7 @@
     // Do any additional setup after loading the view.
     [self setTitleBar];
     [self createUI];
-    [self loadData];
+//    [self loadData];
 }
 
 /*
@@ -36,17 +38,19 @@
 }
 */
 - (void) setTitleBar {
-    [self setLeftBtnIcon:[UIImage imageNamed:@"ic_navbar_back"]];
-    [self setTitle:@"文章列表"];
-    
+    [self setLeftBtnIcon:[UIImage imageNamed:@"hamburger"]];
 }
 
 - (void) onLeftClick {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self openLeftSide];
 }
 
--(void) loadData {
-    [[NetworkClient sharedInstance] getArticleList:8 callback:^(BOOL isSuccess, NSArray<ArticleModel *> *data) {
+-(void) showData:(RssInfoModel *) model {
+    self.model = model;
+    [self setTitle:self.model.title];
+    [self.view makeToastActivity:CSToastPositionCenter];
+    [[NetworkClient sharedInstance] getArticleList:self.model.rid.integerValue callback:^(BOOL isSuccess, NSArray<ArticleModel *> *data) {
+        [self.view hideToastActivity];
         if(isSuccess) {
             self.articleList = data;
             [self.articleTableView reloadData];
@@ -92,9 +96,10 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"index:%ld", [indexPath row]);
-    
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
+    WEAK_SELF
+    [RDRouter openURL:ROUTER_ARTICLE_DETAIL withUserInfo:@{@"fromVC":weakSelf, @"articleModel":self.articleList[[indexPath row]]} completion:nil];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

@@ -9,15 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "FakerNavbarViewController.h"
 
+typedef NS_ENUM(NSInteger, SideNavType){
+    SideNavType_Home = 0,
+    SideNavType_Like = 1,
+    SideNavType_List = 2,
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SideViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
-@property(strong, nonatomic) UIView *maskView;
-@property(strong, nonatomic) UIView *contentView;
-@property(strong, nonatomic) UIView *navbarView;
-@property(strong, nonatomic) UILabel *titleLabel;
-@property(strong, nonatomic) UITableView *tableView;
+
 
 @end
 
